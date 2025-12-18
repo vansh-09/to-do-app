@@ -1,19 +1,24 @@
-import { Header } from "./components/Header";
+import React from "react";
+import Header from "./components/Header";
 import Tabs from "./components/Tabs";
 import ToDoInput from "./components/ToDoInput";
-import ToDoCard from "./components/ToDoCard";
 import ToDoList from "./components/ToDoList";
 
 function App() {
+  const todos = [
+    { input: "Learn React", completed: false },
+    { input: "Build a ToDo App", completed: true },
+    { input: "Master JavaScript", completed: false },
+    { input: "Explore CSS Tricks", completed: true },
+  ];
+
   return (
-    <div>
-      <p>gurt: yo</p>
-      <Header />
-      <Tabs />
-      <ToDoInput />
-      <ToDoCard />
+    <>
+      <Header todos={todos} />
+      <Tabs todos={todos} />
+      <ToDoInput todos={todos} />
       <ToDoList />
-    </div>
+    </>
   );
 }
 export default App;
